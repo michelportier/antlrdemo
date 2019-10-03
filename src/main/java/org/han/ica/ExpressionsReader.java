@@ -2,7 +2,7 @@ package org.han.ica;
 
 import java.util.Stack;
 
-public class PlusReader extends PLUSBaseListener {
+public class ExpressionsReader extends ExpressionsBaseListener {
 
     private Stack<BinaryNode<String>> stack = new Stack<>();
 
@@ -12,9 +12,7 @@ public class PlusReader extends PLUSBaseListener {
     }
 
     @Override
-    public void exitSum(PLUSParser.SumContext ctx) {
-
-        // LEAF
+    public void exitExpression(ExpressionsParser.ExpressionContext ctx) {
         if(ctx.getChildCount()==1) {
             BinaryNode<String> node = new BinaryNode(ctx.getChild(0).getText());
             stack.push(node);

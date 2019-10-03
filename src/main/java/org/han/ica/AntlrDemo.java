@@ -10,18 +10,18 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 public class AntlrDemo {
 
     public static void main(String[] args) {
-        String input = "1+3+80";
+        String input = "1+3+80*2-25";
 
 
         CharStream cs = CharStreams.fromString(input);
-        PLUSLexer lexer = new PLUSLexer(cs);
+        ExpressionsLexer lexer = new ExpressionsLexer(cs);
         TokenStream tokens = new CommonTokenStream(lexer);
 
-        PLUSParser parser = new PLUSParser(tokens);
+        ExpressionsParser parser = new ExpressionsParser(tokens);
 
-        ParseTree tree = parser.sum();
+        ParseTree tree = parser.expression();
 
-        PlusReader reader = new PlusReader();
+        ExpressionsReader reader = new ExpressionsReader();
         ParseTreeWalker walker = new ParseTreeWalker();
         walker.walk(reader,tree);
 
