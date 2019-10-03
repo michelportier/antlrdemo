@@ -2,20 +2,20 @@ package org.han.ica;
 
 public class LesDemo {
 
-    // 1 * 2 * 3, zou 6 uit moeten komen...
+    // 1 + 2 + 3, zou 6 uit moeten komen...
 
     public static void main(String[] args) {
 
         BinaryNode<String> plusNode = new BinaryNode<String>("+");
-        BinaryNode<String> multNode = new BinaryNode<String>("*");
+        BinaryNode<String> plusNode2 = new BinaryNode<String>("+");
 
-        BinaryNode<String> mn4 = new BinaryNode<String>("4");
-        BinaryNode<String> mn5 = new BinaryNode<String>("5");
-        BinaryNode<String> mn6 = new BinaryNode<String>("6");
+        BinaryNode<String> mn4 = new BinaryNode<String>("1");
+        BinaryNode<String> mn5 = new BinaryNode<String>("3");
+        BinaryNode<String> mn6 = new BinaryNode<String>("9");
 
-        multNode.left = mn4;
-        multNode.right = mn6;
-        plusNode.left = multNode;
+        plusNode2.left = mn4;
+        plusNode2.right = mn6;
+        plusNode.left = plusNode2;
         plusNode.right = mn5;
 
 //        BinaryNode<String> multNode1 = new BinaryNode<String>("*");
